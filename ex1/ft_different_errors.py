@@ -13,14 +13,15 @@ def garden_operations():
     print("Testing FileNotFoundError...")
     try:
         temp = open("missing.txt")
+        #close("missing.txt")
     except FileNotFoundError:
         print("Caught FileNotFoundError: No such file 'missing.txt'\n")
     print("Testing KeyError...")
     arr={"temp":21}
     try:
-        temp = arr["missing\_plant"]
+        temp = arr["missing\\_plant"]
     except KeyError:
-        print("Caught KeyError: 'missing\_plant'\n")
+        print("Caught KeyError: 'missing\\_plant'\n")
 
     print("Testing multiple errors together...")
     try:
@@ -30,6 +31,8 @@ def garden_operations():
         print("Caught an error, but program continues!\n")
     
     print("All error types tested successfully!")
+
+
 def test_error_types():
     garden_operations()
 
